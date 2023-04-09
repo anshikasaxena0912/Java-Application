@@ -13,8 +13,7 @@ steps:
   
 - task: Maven@4
   inputs:
-    mavenPomFile: './simple-springboot-app/pom.xml'
-    goals: 'build'
+    mavenPomFile: 'simple-springboot-app/pom.xml'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     javaHomeOption: 'JDKVersion'
