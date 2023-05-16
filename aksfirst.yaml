@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+
+kind: Deployment
+metadata:
+  name: myfirstapp
+spec:
+  selector:
+    matchLabels:
+      app: myfirstapp
+  replicas: 1    
+  template:
+    metadata:
+      labels:
+        app: myfirstapp
+    spec:
+      containers:
+      - name: myfirstapp
+        image: container0912.azurecr.io/container0912:123
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8080
